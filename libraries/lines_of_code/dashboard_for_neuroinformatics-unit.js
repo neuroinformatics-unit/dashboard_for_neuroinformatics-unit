@@ -1,0 +1,1 @@
+var loc_data = ""
