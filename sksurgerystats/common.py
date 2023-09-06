@@ -51,7 +51,7 @@ def get_list_of_packages(all_packages, path="libraries/"):
             and not package.endswith(".txt")
             and not re.search(r"\s", package)
             and not package.startswith(".")
-            and not package == 'available_badges.json'
+            and not package == "available_badges.json"
         ):
             packages.append(package)
     return packages
@@ -131,7 +131,7 @@ def get_packages(
     returns a list of of packages, and optionally sorts by
     the sort key
     """
-    all_packages = [f for f in os.listdir(path) if not f.startswith('.')] 
+    all_packages = [f for f in os.listdir(path) if not f.startswith(".")]
     packages = get_list_of_packages(all_packages)
 
     if sort_key is None:

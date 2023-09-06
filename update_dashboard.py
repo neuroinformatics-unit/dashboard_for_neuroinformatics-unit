@@ -228,10 +228,11 @@ if __name__ == "__main__":
             for badge in badges_dictionary:
                 description = metric_dictionary[badge]
                 WriteCellWithLinkedImage(
-                    fileout, badges_dictionary[badge][0],
-                    badges_dictionary[badge][1], description
+                    fileout,
+                    badges_dictionary[badge][0],
+                    badges_dictionary[badge][1],
+                    description,
                 )
-
 
             fileout.write("  </tr>\n")
 
