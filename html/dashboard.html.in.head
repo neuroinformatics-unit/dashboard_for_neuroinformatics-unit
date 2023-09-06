@@ -1,0 +1,48 @@
+
+<table id="highscoretable" >
+  <thead>
+    <tr>
+      <th style="width:0.1">
+        <p>Library</p>
+      </th>
+      <th style="width:0.1">
+        <p>Total Weeks Up</p>
+      </th>
+      <th style="width:0.1">
+        <p>Latest Update</p>
+      </th>
+      <th style="width:0.05">
+        <p>Lines of Code</p>
+      </th>
+      <th style="width:0.05">
+        <p>Stars</p>
+      </th>
+      <th style="width:0.05">
+        <p>Forks</p>
+      </th>
+      <th style="width:0.05">
+        <p>Watchers</p>
+      </th>
+      <th style="width:0.05">
+        <p>Contributors</p>
+      </th>
+      <th style="width:0.05">
+        <p>Docs</p>
+      </th>
+      <th style="width:0.05">
+        <p>Coverage</p>
+      </th>
+      <th style="width:0.05">
+        <p>CI Status</p>
+      </th>
+      <th style="width:0.05">
+        <p>Downloads with Mirror</p>
+      </th>
+      <th style="width:0.05">
+        <p>Package Health</p>
+      </th>
+      <th style="width:0.05">
+        <p>Maintainability</p>
+      </th>
+    </tr>
+  </thead>

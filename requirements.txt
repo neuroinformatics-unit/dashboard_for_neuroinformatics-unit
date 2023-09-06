@@ -1,0 +1,9 @@
+pypinfo
+PyGithub
+cookieninja
+grpcio-status
+mypy
+pre-commit
+pycloc
+pytest
+types-requests

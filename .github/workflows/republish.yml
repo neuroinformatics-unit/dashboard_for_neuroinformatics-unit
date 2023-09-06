@@ -1,0 +1,55 @@
+name: Republish
+
+on:
+  pull_request: #same workflow is triggered on PRs and on a schedule
+  schedule:
+    - cron: "0 */12 * * *" # Redeploy the dashboard every 12 hours
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Set environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          cache: "pip" # caching pip dependencies
+      - run: |
+          sudo apt-get update
+          sudo apt-get install cloc
+          pip install -r requirements.txt
+          python3 -m pip install --upgrade urllib3==1.26.16
+
+      - name: Regenerate Dashboard 🚀
+        run: |
+          echo "start pipeline"
+          python get_pypi_repos.py
+          echo "step 1 done"
+          python get_github_repos.py
+          echo "step 2 done"
+          python update_pypi_stats.py
+          echo "step 3 done"
+          python update_github_stats.py
+          echo "step 4 done"
+          python get_badges.py
+          echo "step 5 done"
+          python get_loc.py ${{ runner.temp }}
+          echo "step 6 done"
+        env:
+          admin_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Regenerate Dashboard 🚀
+        run: python update_dashboard.py
+
+      - name: Commit changed library files
+        uses: stefanzweifel/git-auto-commit-action@v4

@@ -1,0 +1,12 @@
+
+<table id="excluded table" >
+  <thead>
+    <tr>
+      <th style="width:0.1">
+        <p>Library</p>
+      </th>
+      <th style="width:80%">
+        <p>Reason for exclusion</p>
+      </th>
+    </tr>
+  </thead>
