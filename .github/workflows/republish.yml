@@ -2,8 +2,6 @@ name: Republish
 
 on:
   pull_request: #same workflow is triggered on PRs and on a schedule
-  schedule:
-    - cron: "0 */12 * * *" # Redeploy the dashboard every 12 hours
   push:
 
 permissions:
